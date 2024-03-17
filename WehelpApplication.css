@@ -210,3 +210,22 @@ span:last-child: This targets the last child span element within the elements ma
   margin-right: 22px;
   color: rgba(0, 0, 0, 0.95);
 }
+
+
+a {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
