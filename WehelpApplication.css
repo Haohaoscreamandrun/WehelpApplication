@@ -52,3 +52,105 @@
   padding-left: 5%;
   padding-right: 5%;
 }
+
+#ig_chat_box img {
+  width: 100%;
+  border-radius: 100%;
+  max-height: 32px;
+  max-width: 32px;
+}
+
+.row>.col-12
+
+/*只有row下的子col-12會被選到，但所有section都是*/
+  {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.row>.col-2 {
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+}
+
+#ig_chat_box .row:not(:first-child) {
+  margin-top: 30px;
+}
+
+.row .msg span {
+  display: table;
+  background-color: rgba(0, 0, 0, 0.06);
+  font-size: 16.5px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: rgba(0, 0, 0, 0.95);
+}
+
+#ig_chat_box .row.r-msg:nth-child(17) .msg span:last-child::after
+
+/*
+CSS選擇器沒辦法篩選符合條件的子元素來計算順序，若條件不符合就是不顯示。所以.row.r-msg只有奇數可以顯示，且last因為不符合條件也無法顯示。
+
+span:last-child: This targets the last child span element within the elements matched by the previous part of the selector.
+
+::after: This is a pseudo-element that selects the last child span element's content and adds content after it.*/
+  {
+  position: absolute;
+  content: 'Double tap to ❤️';
+  display: block;
+  margin-top: 15px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.row .m-msg span
+
+/*定義左偏對話框 第一和最後有特別定義*/
+  {
+  border-radius: 0 30px 30px 0;
+  margin-top: 2.5px;
+  text-align: left;
+}
+
+.row.r-msg .m-msg span:first-child
+
+/*瞄準左偏第一個的對話框*/
+  {
+  border-radius: 30px 30px 30px 0;
+}
+
+.row.r-msg .m-msg span:last-child
+
+/*瞄準左偏最後一個的對話框*/
+  {
+  border-radius: 0 30px 30px 30px;
+}
+
+.row.s-msg .msg span {
+  background: linear-gradient(0deg, rgba(64, 95, 222, 1) 0%, rgba(117, 48, 203, 1) 100%);
+  color: #fff;
+  display: table;
+}
+
+.row.s-msg .m-msg {
+  direction: rtl;
+  /*???*/
+}
+
+.row.s-msg .m-msg span {
+  direction: ltr;
+  /*???*/
+  border-radius: 30px 0 0 30px;
+}
+
+.row.s-msg .m-msg span:first-child {
+  border-radius: 30px 30px 0 30px;
+}
+
+.row.s-msg .m-msg span:last-child {
+  border-radius: 30px 0 30px 30px;
+}
